@@ -8,6 +8,8 @@ def SolveBiquadricEquasion(A, B, C):
     result = []
     if (A != 0):
         D = B * B - 4 * A * C
+        if (D < 0):
+            return result #program cannot solve complex num solutions
         y1 = (-B + D**(1/2)) / 2 * A
         y2 = (-B - D**(1/2)) / 2 * A
         if (y1 > 0):
@@ -70,6 +72,8 @@ else:
 
 print(A, B, C)
 result = SolveBiquadricEquasion(A, B, C)
+if len(result) == 0:
+    print("Equation doesn't have any solutions")
 for i in range(len(result)):
     print("x", i + 1, "=", sep='', end='')
     print(result[i])
