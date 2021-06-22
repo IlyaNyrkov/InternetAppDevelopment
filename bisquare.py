@@ -57,23 +57,24 @@ else:
         #lstrip to remove '-', isdigit thinks input is string if first symbol is '-', but it's number
         condition = UserInput.lstrip('-').isdigit()
     A = float(UserInput)
-
+    condition = False
     while not condition:
         print("Enter B coefficient: ")
         UserInput = input()
         condition = UserInput.lstrip('-').isdigit()
     B = float(UserInput)
-
+    condition = False
     while not condition:
         print("Enter C coefficient: ")
         UserInput = input()
         condition = UserInput.lstrip('-').isdigit()
     C = float(UserInput)
 
-print(A, B, C)
 result = SolveBiquadricEquasion(A, B, C)
 if len(result) == 0:
     print("Equation doesn't have any solutions")
+else:
+    print("Equation has", len(result), "solutions:")
 for i in range(len(result)):
     print("x", i + 1, "=", sep='', end='')
     print(result[i])
