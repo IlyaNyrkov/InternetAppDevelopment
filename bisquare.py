@@ -46,28 +46,28 @@ elif len(sys.argv) != 1:
     print("Invalid command line arguments count")
     exit()
 else:
-    condition = False
+    correctInput = False
     #do while loop imitation, user keeps entering coefficient if it's wrong
     #other implementation could be through try catch 
     UserInput = ""
-    while not condition:
+    while not correctInput:
         print("Enter A coefficient: ")
         UserInput = input()
         #condition becomes true in case of right input, loop ends
         #lstrip to remove '-', isdigit thinks input is string if first symbol is '-', but it's number
-        condition = UserInput.lstrip('-').isdigit()
+        correctInput = UserInput.lstrip('-').isdigit()
     A = float(UserInput)
-    condition = False
-    while not condition:
+    correctInput = False
+    while not correctInput:
         print("Enter B coefficient: ")
         UserInput = input()
-        condition = UserInput.lstrip('-').isdigit()
+        correctInput = UserInput.lstrip('-').isdigit()
     B = float(UserInput)
-    condition = False
-    while not condition:
+    correctInput = False
+    while not correctInput:
         print("Enter C coefficient: ")
         UserInput = input()
-        condition = UserInput.lstrip('-').isdigit()
+        correctInput = UserInput.lstrip('-').isdigit()
     C = float(UserInput)
 
 result = SolveBiquadricEquasion(A, B, C)
