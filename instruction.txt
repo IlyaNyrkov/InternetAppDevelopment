@@ -1,8 +1,15 @@
 to go to virtual environment:
-source ./venv/bin/activate
+cd pythonProject
+source ./bin/activate
 
 to check:
 which pip3
+to check for installed packages in virtual environment
+pip list --local
+to install package:
+pip install (for example: pip install protobuf)
 
-to exit environment:
-diactivate
+to exit virtual environment:
+
+deactivate
+
