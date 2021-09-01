@@ -19,7 +19,6 @@ def SolveBiquadricEquasion(A, B, C):
     result = []
     if (A != 0):
         D = B * B - 4 * A * C
-        print(D)
         if (D < 0):
             return result #program cannot solve complex num solutions
         y1 = (-B + math.sqrt(D)) / 2 * A
