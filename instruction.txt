@@ -1,0 +1,8 @@
+to go to virtual environment:
+source ./venv/bin/activate
+
+to check:
+which pip3
+
+to exit environment:
+diactivate
