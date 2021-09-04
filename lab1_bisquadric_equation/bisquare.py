@@ -1,5 +1,6 @@
 import sys 
 import cmath
+import math
 # 1 -10 9 // 3 -3 1 -1
 # 1 -5 4 // 2 -2 1 -1
 # 1 -25 144 // 4 -4 3 -3
@@ -19,8 +20,13 @@ def SolveBiquadricEquasion(A, B, C):
     result = []
     if (A != 0):
         D = B * B - 4 * A * C
-        y1 = (-B + cmath.sqrt(D)) / 2 * A
-        y2 = (-B - cmath.sqrt(D)) / 2 * A
+        D_sqrt = 0
+        if D < 0:
+            D_sqrt = cmath.sqrt(D)
+        else:
+            D_sqrt = math.sqrt(D)    
+        y1 = (-B + D_sqrt) / 2 * A
+        y2 = (-B - D_sqrt) / 2 * A
         result.append(y1**(1/2))
         result.append(-1 * y1**(1/2))
         result.append(y2**(1/2))
