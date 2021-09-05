@@ -3,9 +3,31 @@ from lab_python_fp.gen_random import gen_random
 from lab_python_fp.sort import lambda_sort
 from lab_python_fp.sort import key_sort
 from lab_python_fp.unique import Unique
+from lab_python_fp.print_result import print_result
 from lab_python_fp.cm_timer import cm_timer_1
 
 
+# functions for decorator tests
+@print_result
+def test_1():
+    return 1
+
+
+@print_result
+def test_2():
+    return 'iu5'
+
+
+@print_result
+def test_3():
+    return {'a': 1, 'b': 2}
+
+
+@print_result
+def test_4():
+    return [1, 2]
+
+# ==================================================
 def main():
     # field method testing
     goods = [{'title': 'Ковер', 'price': 2000, 'color': 'green'},
@@ -52,5 +74,13 @@ def main():
     for i in string_case_it:
         print(i, end=' ')
     print()
+
+    # testing print_result decorator
+
+    test_1()
+    test_2()
+    test_3()
+    test_4()
+
 if __name__ == '__main__':
     main()
