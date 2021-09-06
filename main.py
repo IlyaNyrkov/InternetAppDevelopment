@@ -5,7 +5,7 @@ from lab_python_fp.sort import key_sort
 from lab_python_fp.unique import Unique
 from lab_python_fp.print_result import print_result
 from lab_python_fp.cm_timer import cm_timer_1
-
+from lab_python_fp.cm_timer import cm_timer_2
 
 # functions for decorator tests
 @print_result
@@ -27,8 +27,18 @@ def test_3():
 def test_4():
     return [1, 2]
 
+
+# testing cm_timer context manager
+def long_function():
+    long_sum = 0
+    for i in range(0, 25000):
+        for j in range(0, 1000):
+            long_sum += i * j
+
+
 # ==================================================
 def main():
+
     # field method testing
     goods = [{'title': 'Ковер', 'price': 2000, 'color': 'green'},
              {'title': 'Диван для отдыха', 'price': 5000, 'color': 'black'},
@@ -81,6 +91,14 @@ def main():
     test_2()
     test_3()
     test_4()
+
+    # testing context manager
+    with cm_timer_1('long func'):
+        long_function()
+
+    with cm_timer_2('long func2'):
+        long_function()
+
 
 if __name__ == '__main__':
     main()
