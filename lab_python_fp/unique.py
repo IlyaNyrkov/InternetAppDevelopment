@@ -16,9 +16,9 @@ class Unique(object):
         # Can't use set here, because set sorts it's elements
         # we want to save original order
         if not self.ignore_case:
-            self.elements = Counter([x.lower() for x in items])
+            self.elements = sorted(set([x.casefold() for x in items]))
         else:
-            self.elements = Counter(items)
+            self.elements = sorted(set(items))
         self.elements_it = iter(self.elements)
 
     def __next__(self):
