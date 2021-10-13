@@ -23,7 +23,9 @@ def print_bookshops_with_book_count(_books_records_list, _bookshop_records_list)
         print(" books count: ", books_count)
 
 
-def print_author_books_ending_with_y():
+def print_author_books_ending_with_y(_bookshop_books_records_list,
+                                     _books_records_list, _bookshop_records_list):
+
     pass
 
 
@@ -53,3 +55,4 @@ if __name__ == '__main__':
     print_books_from_each_bookshop(book_records_list, bookshop_records_list)
     print("\nBookshops with book count")
     print_bookshops_with_book_count(book_records_list, bookshop_records_list)
+    print("Books author names ending with y")
