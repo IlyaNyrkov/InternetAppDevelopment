@@ -1,0 +1,16 @@
+{% extends 'BuyOrSell/base.html' %}
+
+{% block title %}
+Page about us
+{% endblock %}
+
+{% block content %}
+  <h1>About crypto exchange platform <b>"coinWarehouse"</b></h1>
+  <pre>
+    "Coin warehouse" is crypto exchange platform with analytics and fast request proccesing
+     and two types of analytics: short term and long term analytics. Data for short term analytics
+     is stored by <strong>Tarantool</strong>, data is proccesed inside by <strong>Lua</strong> procedures.
+     Data for long term analytics is stored by <strong>Clickhouse</strong> and proccesed in python analytics app.
+    </pre>
+  {% load static %} <img src="{% static "BuyOrSell/media/BirjaArchitecture.png" %}" alt="Here supposed to be architecture of whole service" style="width: 200; height: 200;"/>
+{% endblock %}
