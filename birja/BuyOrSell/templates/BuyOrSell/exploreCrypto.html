@@ -1,0 +1,23 @@
+{% extends 'BuyOrSell/base.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+  <h1>Crypto currencies list</h1>
+  {% if tasks %}
+    {% for elem in cryptos %}
+        <div class="alert alert-warning mt-2">
+            <h3>{{ elem.name }}</h3>
+            <p>{{ elem.dollar_price }}$</p>
+            <p>{{ elem.euro_price }}€</p>
+            <p>{{ elem.rubbles_price }}₽</p>
+            <p>{{ elem.description }}₽</p>
+            <p>{{ elem.logo }}₽</p>
+        </div>
+    {% endfor %}
+  {% else %}
+        <p>No cryptos yet</p>
+  {% endif %}
+{% endblock %}

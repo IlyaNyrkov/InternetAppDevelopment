@@ -1,0 +1,20 @@
+{% extends 'BuyOrSell/base.html' %}
+
+{% block title %}
+Add info about crypto
+{% endblock %}
+
+{% block content %}
+  <h1>Add info about crypto</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.name }}<br>
+    {{ form.dollar_price }}<br>
+    {{ form.euro_price }}<br>
+    {{ form.rubles_price }}<br>
+    {{ form.logo }}<br>
+    {{ form.description }}<br>
+    <button type="submit" class="btn btn-success">Add</button>
+    <span>{{ error }}</span>
+  </form>
+{% endblock %}
