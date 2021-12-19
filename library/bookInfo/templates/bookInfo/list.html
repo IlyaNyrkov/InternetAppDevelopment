@@ -1,0 +1,35 @@
+{% extends 'bookInfo/base.html' %}
+
+{% block title %}
+{{entity}}
+{% endblock %}
+
+{% block content %}
+<h2>Entity <i>{{entity}}</i></h2>
+
+{% if entity == 'Bookshop' %}
+<a href='/bookshop/create'>Add element</a>
+{% endif %}
+{% if entity == 'Book' %}
+<a href='/book/create'>Add element</a>
+{% endif %}
+<p>Elem list:</p>
+<ul>
+   {% for elem in objects %}
+   <hr>
+   <li>
+      {% if entity == 'Bookshop' %}
+      {{elem.name}} at {{elem.address}}<br>
+      <a href='{% url "bookshop_update" elem.bookshop_record_id %}'>Change</a>
+      <a href='{% url "bookshop_delete" elem.bookshop_record_id %}'>Delete</a>
+      {% endif %}
+      {% if entity == 'Book' %}
+      {{elem.title}} by {{elem.author}}<br>
+      <a href='{% url "book_update" elem.book_record_id %}'>Change</a>
+      <a href='{% url "book_delete" elem.book_record_id %}'>Delete</a>
+      {% endif %}
+   </li>
+   {% endfor %}
+   <hr>
+</ul>
+{% endblock %}
